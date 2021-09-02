@@ -30,9 +30,9 @@ func _physics_process(delta):
 		moving = true
 		$AnimatedSprite.flip_h = false
 
-	movec = movec.normalized() * speed * delta
+	movec = movec.normalized() * speed
 	
-	position += movec
+	move_and_slide_with_snap(movec, Vector2.UP)
 	
 	if moving == true:
 		$AnimatedSprite.play("run")

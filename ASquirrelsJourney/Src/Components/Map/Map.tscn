@@ -1,0 +1,47 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Src/Components/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Src/Components/Rocks/Rock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Src/Components/Rocks/Rock3.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Src/Components/Rocks/Rock2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Src/Components/Particles/PinkOrangeLeaves.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Src/Components/Particles/OrangeYellowLeaves.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Src/Components/Map/Map.gd" type="Script" id=7]
+[ext_resource path="res://Src/Components/Trees/Tree3.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Src/Components/Trees/Tree.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Src/Components/Trees/Tree2.tscn" type="PackedScene" id=10]
+
+[node name="Map" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="OrangeYellowLeaves" parent="." instance=ExtResource( 6 )]
+position = Vector2( 0, -250 )
+emitting = false
+
+[node name="PinkOrangeLeaves" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1024, -250 )
+emitting = false
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 313.596, 516.721 )
+scale = Vector2( 0.25, 0.25 )
+speed = 150
+
+[node name="Rock" parent="." instance=ExtResource( 2 )]
+position = Vector2( 916, 468 )
+
+[node name="Rock2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 388, 296 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Rock3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 604, 446 )
+
+[node name="Tree" parent="." instance=ExtResource( 9 )]
+position = Vector2( 840.048, 105.714 )
+
+[node name="Tree2" parent="Tree" instance=ExtResource( 10 )]
+position = Vector2( -630.508, -58.5202 )
+
+[node name="Tree3" parent="Tree/Tree2" instance=ExtResource( 8 )]
+position = Vector2( 290.713, -143.469 )
