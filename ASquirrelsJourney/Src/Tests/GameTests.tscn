@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Src/Components/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Src/Components/Particles/OrangeYellowLeaves.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Src/Components/Particles/PinkOrangeLeaves.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Src/Tests/GameTests.gd" type="Script" id=4]
+
+[node name="GameTests" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 548.264, 339.722 )
+scale = Vector2( 0.25, 0.25 )
+speed = 150
+
+[node name="PinkOrangeLeaves" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1024, -200 )
+emitting = false
+
+[node name="OrangeYellowLeaves" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -200 )
+emitting = false
