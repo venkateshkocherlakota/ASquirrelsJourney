@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Src/Components/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Src/Components/Rocks/Rock.tscn" type="PackedScene" id=2]
@@ -10,38 +10,203 @@
 [ext_resource path="res://Src/Components/Trees/Tree3.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Src/Components/Trees/Tree.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Src/Components/Trees/Tree2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Src/Components/Trees/Home.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Resources/images/white.png" type="Texture" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 39.915, 2402.91 )
 
 [node name="Map" type="Node2D"]
 script = ExtResource( 7 )
 
-[node name="OrangeYellowLeaves" parent="." instance=ExtResource( 6 )]
-position = Vector2( 0, -250 )
-emitting = false
+[node name="POLeaves" type="Node2D" parent="."]
 
-[node name="PinkOrangeLeaves" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1024, -250 )
+[node name="PinkOrangeLeaves" parent="POLeaves" instance=ExtResource( 5 )]
+position = Vector2( 0, -200 )
 emitting = false
+visibility_rect = Rect2( -1000, -1000, 2000, 2000 )
+
+[node name="PinkOrangeLeaves2" parent="POLeaves" instance=ExtResource( 5 )]
+position = Vector2( -711.246, -1561.94 )
+emitting = false
+visibility_rect = Rect2( -1000, -1000, 2000, 2000 )
+
+[node name="PinkOrangeLeaves3" parent="POLeaves" instance=ExtResource( 5 )]
+position = Vector2( 1289.86, 1333.25 )
+rotation = -3.14159
+emitting = false
+visibility_rect = Rect2( -1000, -1000, 2000, 2000 )
+
+[node name="OYLeaves" type="Node2D" parent="."]
+
+[node name="OrangeYellowLeaves" parent="OYLeaves" instance=ExtResource( 6 )]
+position = Vector2( 1374.83, -1441.66 )
+emitting = false
+visibility_rect = Rect2( -1000, -1000, 2000, 2000 )
+
+[node name="OrangeYellowLeaves2" parent="OYLeaves" instance=ExtResource( 6 )]
+position = Vector2( -1613.51, 1002.48 )
+rotation = -1.5708
+emitting = false
+visibility_rect = Rect2( -1000, -250, 2000, 2000 )
+
+[node name="OrangeYellowLeaves3" parent="OYLeaves" instance=ExtResource( 6 )]
+position = Vector2( -530.181, 1907.63 )
+rotation = -1.5708
+emitting = false
+visibility_rect = Rect2( -250, -1000, 2000, 2000 )
+
+[node name="bounds" type="Node2D" parent="."]
+
+[node name="left" type="StaticBody2D" parent="bounds"]
+position = Vector2( -2000, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bounds/left"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="bounds/left"]
+modulate = Color( 1, 0.741176, 0.388235, 1 )
+position = Vector2( -795.941, 0 )
+scale = Vector2( 8.30941, 24 )
+texture = ExtResource( 12 )
+
+[node name="right" type="StaticBody2D" parent="bounds"]
+position = Vector2( 2750, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bounds/right"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="bounds/right"]
+modulate = Color( 1, 0.741176, 0.388235, 1 )
+position = Vector2( 825.986, 0 )
+scale = Vector2( 8.60986, 24 )
+texture = ExtResource( 12 )
+
+[node name="bottom" type="StaticBody2D" parent="bounds"]
+position = Vector2( 400, 2400 )
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bounds/bottom"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="bounds/bottom"]
+modulate = Color( 1, 0.741176, 0.388235, 1 )
+position = Vector2( 165, 28.509 )
+scale = Vector2( 2, 39.9649 )
+texture = ExtResource( 12 )
+
+[node name="top" type="StaticBody2D" parent="bounds"]
+position = Vector2( 400, -2400 )
+rotation = -1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bounds/top"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="bounds/top"]
+modulate = Color( 1, 0.741176, 0.388235, 1 )
+position = Vector2( 165, 0.588806 )
+scale = Vector2( 2, 40.2162 )
+texture = ExtResource( 12 )
+
+[node name="Home" parent="." instance=ExtResource( 11 )]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 313.596, 516.721 )
-scale = Vector2( 0.25, 0.25 )
-speed = 150
+scale = Vector2( 0.2, 0.2 )
+speed = 200
 
-[node name="Rock" parent="." instance=ExtResource( 2 )]
-position = Vector2( 916, 468 )
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+zoom = Vector2( 1.5, 1.5 )
 
-[node name="Rock2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 388, 296 )
-scale = Vector2( 0.5, 0.5 )
+[node name="Trees" type="Node2D" parent="."]
 
-[node name="Rock3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 604, 446 )
+[node name="Tree" parent="Trees" instance=ExtResource( 9 )]
+position = Vector2( 810.611, -907.131 )
 
-[node name="Tree" parent="." instance=ExtResource( 9 )]
-position = Vector2( 840.048, 105.714 )
+[node name="Tree_1" parent="Trees" instance=ExtResource( 9 )]
+position = Vector2( 1380.39, -1431.62 )
 
-[node name="Tree2" parent="Tree" instance=ExtResource( 10 )]
-position = Vector2( -630.508, -58.5202 )
+[node name="Tree_2" parent="Trees" instance=ExtResource( 9 )]
+position = Vector2( 1760.79, -825.476 )
 
-[node name="Tree3" parent="Tree/Tree2" instance=ExtResource( 8 )]
-position = Vector2( 290.713, -143.469 )
+[node name="Tree_3" parent="Trees" instance=ExtResource( 9 )]
+position = Vector2( 447.139, 322.847 )
+
+[node name="Tree_4" parent="Trees" instance=ExtResource( 9 )]
+position = Vector2( 861.725, 861.704 )
+
+[node name="Tree_6" parent="Trees" instance=ExtResource( 9 )]
+position = Vector2( 35.2161, 1264.88 )
+
+[node name="Tree_5" parent="Trees" instance=ExtResource( 9 )]
+position = Vector2( 1220.16, -277.558 )
+
+[node name="Tree2" parent="Trees" instance=ExtResource( 10 )]
+position = Vector2( -657.132, -594.634 )
+
+[node name="Tree8" parent="Trees" instance=ExtResource( 10 )]
+position = Vector2( -1271.97, -40.2687 )
+
+[node name="Tree11" parent="Trees" instance=ExtResource( 10 )]
+position = Vector2( -1473.56, -977.65 )
+
+[node name="Tree12" parent="Trees" instance=ExtResource( 10 )]
+position = Vector2( 512.074, -1995.67 )
+
+[node name="Tree9" parent="Trees" instance=ExtResource( 10 )]
+position = Vector2( -526.1, 1894.97 )
+
+[node name="Tree10" parent="Trees" instance=ExtResource( 10 )]
+position = Vector2( -1604.59, 937.43 )
+
+[node name="Tree2_1" parent="Trees" instance=ExtResource( 10 )]
+position = Vector2( 589.713, 1661.24 )
+
+[node name="Tree2_2" parent="Trees" instance=ExtResource( 10 )]
+position = Vector2( 2427.76, 43.3566 )
+
+[node name="Tree2_3" parent="Trees" instance=ExtResource( 10 )]
+position = Vector2( 2318.38, 1253.39 )
+
+[node name="Tree2_4" parent="Trees" instance=ExtResource( 10 )]
+position = Vector2( 1575.93, 486.454 )
+
+[node name="Tree2_5" parent="Trees" instance=ExtResource( 10 )]
+position = Vector2( -746.486, 1131.43 )
+
+[node name="Tree3" parent="Trees" instance=ExtResource( 8 )]
+position = Vector2( 1297.48, 1327.15 )
+
+[node name="Tree4" parent="Trees" instance=ExtResource( 8 )]
+position = Vector2( 1950.63, 1681.56 )
+
+[node name="Tree5" parent="Trees" instance=ExtResource( 8 )]
+position = Vector2( -478.494, 482.115 )
+
+[node name="Tree6" parent="Trees" instance=ExtResource( 8 )]
+position = Vector2( 116.188, -1120.5 )
+
+[node name="Tree7" parent="Trees" instance=ExtResource( 8 )]
+position = Vector2( -710.32, -1543.84 )
+
+[node name="Rocks" type="Node2D" parent="."]
+
+[node name="Rock2" parent="Rocks" instance=ExtResource( 4 )]
+position = Vector2( 205.126, -625.219 )
+
+[node name="Rock6" parent="Rocks" instance=ExtResource( 4 )]
+position = Vector2( 1217.83, 1906.53 )
+
+[node name="Rock3" parent="Rocks" instance=ExtResource( 3 )]
+position = Vector2( 337.635, 1017.14 )
+
+[node name="Rock4" parent="Rocks" instance=ExtResource( 3 )]
+position = Vector2( 797.731, 67.2007 )
+
+[node name="Rock" parent="Rocks" instance=ExtResource( 2 )]
+position = Vector2( 1821.48, -89.618 )
+
+[node name="Rock5" parent="Rocks" instance=ExtResource( 2 )]
+position = Vector2( -1067.7, 545.802 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
