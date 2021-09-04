@@ -1,0 +1,271 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Resources/fonts/IBM_Plex_Sans/IBMPlexSans-Italic.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Src/Scenes/Introduction/Intro3.gd" type="Script" id=2]
+[ext_resource path="res://Resources/images/acorn.png" type="Texture" id=3]
+[ext_resource path="res://Resources/images/rays.png" type="Texture" id=4]
+[ext_resource path="res://Resources/images/white.png" type="Texture" id=5]
+[ext_resource path="res://Resources/images/spot.png" type="Texture" id=6]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.584314, 0.211765, 0.243137, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.992157, 0.92549, 0.815686, 1 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.584314, 0.211765, 0.243137, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.956863, 0.882353, 0.760784, 1 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.584314, 0.211765, 0.243137, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.341176, 0.145098, 0.231373, 1 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.584314, 0.211765, 0.243137, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.721569, 0.494118, 0.411765, 1 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="DynamicFont" id=6]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "rays"
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("rays:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+
+[node name="Intro3" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -5.94604
+margin_bottom = -5.94604
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rays" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0.490196 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -700.0
+margin_top = -700.0
+margin_right = 700.0
+margin_bottom = 700.0
+rect_pivot_offset = Vector2( 700, 700 )
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rays2" type="TextureRect" parent="."]
+modulate = Color( 1, 0.764706, 0.321569, 0.627451 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -375.0
+margin_top = -375.0
+margin_right = 375.0
+margin_bottom = 375.0
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="leaf3" type="TextureRect" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.745098 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -90.6674
+margin_top = -103.995
+margin_right = 103.333
+margin_bottom = 60.0045
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogPanel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -505.0
+margin_top = -130.0
+margin_right = 505.0
+margin_bottom = -5.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="DialogPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -477.701
+margin_top = -49.8484
+margin_right = 416.299
+margin_bottom = 67.1516
+custom_fonts/font = SubResource( 2 )
+text = "Then Jimmy realized that the winter is coming and only 1 week of autumn left.
+He decided to gather 10 Acorns as the elder squirrel suggested and planned to 
+store them for winter."
+align = 3
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="DialogPanel"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -129.0
+margin_top = 7.5
+margin_right = -43.0
+margin_bottom = 49.5
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+text = "Next"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="acorns" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="acorn4" type="TextureRect" parent="acorns"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -97.2906
+margin_top = -111.418
+margin_right = 102.709
+margin_bottom = 88.5823
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="acorn3" type="TextureRect" parent="acorns"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -53.6365
+margin_top = -104.291
+margin_right = 146.363
+margin_bottom = 95.7094
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="acorn" type="TextureRect" parent="acorns"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -139.163
+margin_top = -108.745
+margin_right = 60.8372
+margin_bottom = 91.255
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="acorn2" type="TextureRect" parent="acorns"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -96.3997
+margin_top = -74.8909
+margin_right = 103.6
+margin_bottom = 125.109
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "rays"
+anims/rays = SubResource( 7 )
+
+[connection signal="pressed" from="DialogPanel/Button" to="." method="_on_Button_pressed"]

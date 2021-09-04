@@ -1,11 +1,21 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Resources/images/tree2.png" type="Texture" id=1]
+[ext_resource path="res://Src/Components/Trees/Tree.gd" type="Script" id=2]
 
 [node name="Tree" type="StaticBody2D"]
+script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -67.4126, 309.493, -31.696, 306.318, 2.43307, 306.318, 31.8, 312.668, 16.7197, 292.031, 7.19525, 265.046, -42.8079, 255.521, -48.3638, 284.094 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -67.3649, 309.699, -31.9917, 306.362, 4.7164, 307.029, 31.4132, 312.369, 7.38608, 264.314, -1.29037, 220.265, 0.0444641, 153.523, 8.72092, 116.147, 152.216, 84.111, 236.979, 8.02513, 237.646, -106.771, 161.56, -200.21, 70.7909, -238.253, -56.6863, -243.592, -176.154, -188.864, -242.229, -78.7395, -230.883, 38.059, -161.471, 88.1155, -42.6704, 120.152, -35.9963, 170.876, -37.3312, 216.26, -45.3402, 262.312, -50.6796, 289.009 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

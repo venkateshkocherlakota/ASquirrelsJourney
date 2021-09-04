@@ -6,10 +6,13 @@ export var speed = 50
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if Global.full_speed == true:
+		speed = Global.player_full_speed
+	else:
+		speed = Global.player_half_speed
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	
 	var movec = Vector2.ZERO
 	var moving = false
@@ -32,7 +35,7 @@ func _physics_process(delta):
 
 	movec = movec.normalized() * speed
 	
-	move_and_slide_with_snap(movec, Vector2.UP)
+	var _r = move_and_slide_with_snap(movec, Vector2.UP)
 	
 	if moving == true:
 		$AnimatedSprite.play("run")
