@@ -1,6 +1,6 @@
 extends Node
 
-
+var scene_mainmenu = 'res://Src/Scenes/MainMenu/MainMenu.tscn'
 var scene_intro1 = 'res://Src/Scenes/Introduction/Intro1.tscn'
 var scene_intro2 = 'res://Src/Scenes/Introduction/Intro2.tscn'
 var scene_intro3 = 'res://Src/Scenes/Introduction/Intro3.tscn'

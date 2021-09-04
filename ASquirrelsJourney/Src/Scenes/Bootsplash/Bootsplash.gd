@@ -10,7 +10,7 @@ extends Control
 func _ready():
 	$AnimationPlayer.play("splash")
 	yield($AnimationPlayer, "animation_finished")
-	var _r = get_tree().change_scene(Global.scene_intro1)
+	var _r = get_tree().change_scene(Global.scene_mainmenu)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
