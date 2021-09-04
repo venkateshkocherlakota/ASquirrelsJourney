@@ -6,6 +6,7 @@ export var speed = 50
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$FootstepsSound.play()
 	if Global.full_speed == true:
 		speed = Global.player_full_speed
 	else:
@@ -34,6 +35,11 @@ func _physics_process(_delta):
 		$AnimatedSprite.flip_h = false
 
 	movec = movec.normalized() * speed
+	
+	if moving == true:
+		$FootstepsSound.stream_paused = false
+	else:
+		$FootstepsSound.stream_paused = true
 	
 	var _r = move_and_slide_with_snap(movec, Vector2.UP)
 	

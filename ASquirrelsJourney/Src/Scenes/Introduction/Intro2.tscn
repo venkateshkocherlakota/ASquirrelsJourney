@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Resources/fonts/IBM_Plex_Sans/IBMPlexSans-Italic.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Src/Scenes/Introduction/Intro2.gd" type="Script" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Resources/images/rock.png" type="Texture" id=5]
 [ext_resource path="res://Resources/images/grass.png" type="Texture" id=6]
 [ext_resource path="res://Src/Components/Particles/PinkOrangeLeaves.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Resources/Audio/SFX/click.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Resources/Audio/Bgm/slowmo.ogg" type="AudioStream" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.584314, 0.211765, 0.243137, 1 )
@@ -228,5 +230,13 @@ position = Vector2( 811.039, -192.652 )
 emitting = false
 process_material = SubResource( 11 )
 texture = SubResource( 12 )
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -10.0
+autoplay = true
 
 [connection signal="pressed" from="DialogPanel/Button" to="." method="_on_Button_pressed"]

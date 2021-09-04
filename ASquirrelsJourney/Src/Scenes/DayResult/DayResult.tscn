@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Resources/fonts/IBM_Plex_Sans/IBMPlexSans-Medium.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Resources/fonts/IBM_Plex_Sans/IBMPlexSans-Italic.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Resources/images/bg.png" type="Texture" id=3]
 [ext_resource path="res://Src/Scenes/DayResult/DayResult.gd" type="Script" id=4]
+[ext_resource path="res://Resources/Audio/SFX/click.ogg" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 62
@@ -291,6 +292,9 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/fade_in = SubResource( 9 )
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
 
 [connection signal="pressed" from="EatAcornDialog/Buttons/Yes" to="." method="_on_Yes_pressed"]
 [connection signal="pressed" from="EatAcornDialog/Buttons/No" to="." method="_on_No_pressed"]

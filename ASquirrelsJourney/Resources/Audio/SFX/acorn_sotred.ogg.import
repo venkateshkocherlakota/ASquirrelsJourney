@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/acorn_sotred.ogg-4a3f53614b7c43638350d4a05c53c059.oggstr"
+
+[deps]
+
+source_file="res://Resources/Audio/SFX/acorn_sotred.ogg"
+dest_files=[ "res://.import/acorn_sotred.ogg-4a3f53614b7c43638350d4a05c53c059.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Resources/fonts/Lobster/Lobster-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Src/Components/Particles/PinkOrangeLeaves.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Resources/fonts/IBM_Plex_Sans/IBMPlexSans-Bold.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Src/Scenes/MainMenu/MainMenu.gd" type="Script" id=5]
 [ext_resource path="res://Resources/fonts/IBM_Plex_Sans/IBMPlexSans-Light.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Resources/Audio/Bgm/slowmo.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Resources/Audio/SFX/click.ogg" type="AudioStream" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 128
@@ -92,9 +94,24 @@ flags = 4
 load_path = "res://.import/leaf.png-04279001cbe0d43f0c3dc59dd965885b.stex"
 
 [sub_resource type="DynamicFont" id=12]
-size = 28
 use_filter = true
 font_data = ExtResource( 6 )
+
+[sub_resource type="Animation" id=13]
+resource_name = "smoothin"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("BGM:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -80.0, -10.0 ]
+}
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -151,15 +168,27 @@ emitting = false
 process_material = SubResource( 10 )
 texture = SubResource( 11 )
 
-[node name="Label" type="Label" parent="."]
-margin_left = 575.192
-margin_top = 9.98715
-margin_right = 1005.19
-margin_bottom = 46.9871
+[node name="credits" type="Label" parent="."]
+margin_left = 7.55099
+margin_top = 0.471935
+margin_right = 299.551
+margin_bottom = 22.4719
 custom_fonts/font = SubResource( 12 )
-text = "Royalty Free Music from Bensound"
+text = "Royalty Free Music from Bensound, Mixit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -10.0
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "smoothin"
+anims/smoothin = SubResource( 13 )
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

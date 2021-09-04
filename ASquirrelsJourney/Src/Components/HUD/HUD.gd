@@ -26,7 +26,3 @@ func _process(_delta):
 
 func set_time(sec):
 	$TimeLeft/Time.text = str(sec)
-
-
-func _on_PauseButton_pressed():
-	pass # Replace with function body.

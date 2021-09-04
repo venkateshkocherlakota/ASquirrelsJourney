@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Resources/fonts/IBM_Plex_Sans/IBMPlexSans-Medium.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Resources/images/run.png" type="Texture" id=2]
 [ext_resource path="res://Resources/images/arrows.png" type="Texture" id=3]
-[ext_resource path="res://Resources/images/pause.png" type="Texture" id=4]
 [ext_resource path="res://Resources/images/bg.png" type="Texture" id=5]
 [ext_resource path="res://Resources/fonts/IBM_Plex_Sans/IBMPlexSans-Bold.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Src/Components/HUD/HUD.gd" type="Script" id=7]
@@ -164,21 +163,6 @@ rect_rotation = 90.0
 rect_pivot_offset = Vector2( 24, 24 )
 texture = ExtResource( 3 )
 
-[node name="PauseButton" type="TextureButton" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -124.0
-margin_top = 20.0
-margin_right = -28.0
-margin_bottom = 116.0
-rect_min_size = Vector2( 64, 64 )
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 4 )
-texture_hover = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="PauseMenu" type="Control" parent="."]
 visible = false
 margin_right = 40.0
@@ -241,5 +225,3 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[connection signal="pressed" from="PauseButton" to="." method="_on_PauseButton_pressed"]

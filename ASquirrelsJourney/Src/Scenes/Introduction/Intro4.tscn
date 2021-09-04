@@ -1,9 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Resources/fonts/IBM_Plex_Sans/IBMPlexSans-Italic.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Resources/fonts/IBM_Plex_Sans/IBMPlexSans-BoldItalic.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Src/Scenes/Introduction/Intro4.gd" type="Script" id=3]
 [ext_resource path="res://Resources/images/home.png" type="Texture" id=4]
+[ext_resource path="res://Resources/Audio/SFX/click.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Resources/Audio/Bgm/slowmo.ogg" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -356,5 +358,13 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -10.0
+autoplay = true
 
 [connection signal="pressed" from="DialogPanel/Button" to="." method="_on_Button_pressed"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Src/Scenes/Ending/Ending.gd" type="Script" id=1]
 [ext_resource path="res://Resources/fonts/IBM_Plex_Sans/IBMPlexSans-Italic.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Resources/images/bg.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Audio/Bgm/slowmo.ogg" type="AudioStream" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.584314, 0.211765, 0.243137, 1 )
@@ -78,3 +79,8 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -15.0
+autoplay = true

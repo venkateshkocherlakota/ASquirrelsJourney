@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Resources/fonts/IBM_Plex_Sans/IBMPlexSans-Italic.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Src/Scenes/Introduction/Intro3.gd" type="Script" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Resources/images/rays.png" type="Texture" id=4]
 [ext_resource path="res://Resources/images/white.png" type="Texture" id=5]
 [ext_resource path="res://Resources/images/spot.png" type="Texture" id=6]
+[ext_resource path="res://Resources/Audio/SFX/click.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Resources/Audio/Bgm/slowmo.ogg" type="AudioStream" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.584314, 0.211765, 0.243137, 1 )
@@ -267,5 +269,13 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "rays"
 anims/rays = SubResource( 7 )
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -10.0
+autoplay = true
 
 [connection signal="pressed" from="DialogPanel/Button" to="." method="_on_Button_pressed"]

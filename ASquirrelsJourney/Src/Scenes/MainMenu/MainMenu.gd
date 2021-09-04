@@ -17,4 +17,6 @@ func _ready():
 
 
 func _on_Button_pressed():
-	get_tree().change_scene(Global.scene_intro1)
+	$ButtonClick.play()
+	yield($ButtonClick, "finished")
+	var _R = get_tree().change_scene(Global.scene_intro1)

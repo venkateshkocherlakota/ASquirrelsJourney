@@ -21,6 +21,7 @@ func _on_Area2D_body_entered(body):
 		if name == 'Home' and Global.player_has_acorn == true:
 			Global.acorns_count += 1
 			Global.player_has_acorn = false
+			$AcornStored.play()
 		$Sprite.modulate = Color(1,1,1,0.5)
 
 

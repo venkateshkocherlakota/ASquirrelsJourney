@@ -27,12 +27,18 @@ func fade_in():
 
 
 func _on_Yes_pressed():
+	$ButtonClick.play()
+	yield($ButtonClick, "finished")
 	get_parent().get_parent().next_day_with_acorn()
 
 
 func _on_No_pressed():
+	$ButtonClick.play()
+	yield($ButtonClick, "finished")
 	get_parent().get_parent().next_day_without_acorn()
 
 
 func _on_ContinueButton_pressed():
+	$ButtonClick.play()
+	yield($ButtonClick, "finished")
 	get_parent().get_parent().next_day_without_acorn()
