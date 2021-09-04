@@ -23,6 +23,7 @@ func _on_GamePlayTimer_timeout():
 	Global.total_acorns_count += Global.acorns_count
 	if Global.player_has_acorn == true:
 		Global.total_acorns_count += 1
+		Global.acorns_count += 1
 		Global.player_has_acorn = false
 	$CanvasLayer/DayResult.fade_in()
 
@@ -30,9 +31,9 @@ func next_day_with_acorn():
 	Global.full_speed = true
 	Global.total_acorns_count -= 1
 	get_tree().paused = false
-	get_tree().change_scene(Global.scene_day7)
+	var _r = get_tree().change_scene(Global.scene_day7)
 
 func next_day_without_acorn():
 	Global.full_speed = false
 	get_tree().paused = false
-	get_tree().change_scene(Global.scene_day7)
+	var _r = get_tree().change_scene(Global.scene_day7)

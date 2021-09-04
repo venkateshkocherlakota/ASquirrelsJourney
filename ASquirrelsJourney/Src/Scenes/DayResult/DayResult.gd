@@ -17,9 +17,13 @@ func hide_eat_acorn_dialog():
 
 
 func fade_in():
+	if Global.total_acorns_count <= 0:
+		$ContinueDialog.visible = true
+		$EatAcornDialog.visible = false
 	$AnimationPlayer.play('fade_in')
 	$Stats/Collected/Count.text = str(Global.acorns_count)
 	$Stats/TotalStored/Count.text = str(Global.total_acorns_count)
+	
 
 
 func _on_Yes_pressed():

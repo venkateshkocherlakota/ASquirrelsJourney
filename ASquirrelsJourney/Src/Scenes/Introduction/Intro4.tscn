@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Resources/fonts/IBM_Plex_Sans/IBMPlexSans-Italic.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Resources/fonts/IBM_Plex_Sans/IBMPlexSans-BoldItalic.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Src/Scenes/Introduction/Intro4.gd" type="Script" id=3]
+[ext_resource path="res://Resources/images/home.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -287,8 +288,8 @@ margin_right = 408.5
 margin_bottom = 142.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.584314, 0.211765, 0.243137, 1 )
-text = "To pickup an Acorn, go near it. To drop it, press SPACE.
-Go near Home Tree to automatically drop the Acorn in."
+text = "To pickup an Acorn, go near it. Go near 
+Home Tree to automatically drop the Acorn in."
 align = 3
 autowrap = true
 __meta__ = {
@@ -341,6 +342,17 @@ custom_styles/pressed = SubResource( 7 )
 custom_styles/normal = SubResource( 8 )
 custom_fonts/font = SubResource( 9 )
 text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 781.001
+margin_top = 287.319
+margin_right = 981.001
+margin_bottom = 487.319
+texture = ExtResource( 4 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

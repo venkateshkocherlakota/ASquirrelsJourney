@@ -17,4 +17,4 @@ func _ready():
 
 
 func _on_Button_pressed():
-	get_tree().change_scene(Global.scene_intro2)
+	var _r = get_tree().change_scene(Global.scene_intro2)

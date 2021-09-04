@@ -12,7 +12,7 @@ var scene_day4 = 'res://Src/Scenes/Day4/Day4.tscn'
 var scene_day5 = 'res://Src/Scenes/Day5/Day5.tscn'
 var scene_day6 = 'res://Src/Scenes/Day6/Day6.tscn'
 var scene_day7 = 'res://Src/Scenes/Day7/Day7.tscn'
-
+var scene_ending = 'res://Src/Scenes/Ending/Ending.tscn'
 var acorns_count : int = 0
 var total_acorns_count : int = 0
 var full_speed : bool = false
